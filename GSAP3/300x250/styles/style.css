@@ -1,0 +1,524 @@
+@charset "UTF-8";
+
+body, body * {
+	vertical-align: baseline;
+	border: 0;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+}
+
+:focus { outline:none; }
+::-moz-focus-inner { border:0; }
+
+
+/* ********************************************************************************************* */
+/* Preloader *********************************************************************************** */
+
+#preloader {
+	background-color: white;
+}
+
+#spinnerContainer {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.spinner {
+	animation: spin 1200ms linear infinite;
+	width: 40px;
+	height: 40px;
+	border: 4px solid #00b6b5;
+	border-bottom-color: #ffec00;
+	border-radius: 50%;
+}
+
+@keyframes spin {
+	to { transform: rotate(360deg); }
+}
+/* ********************************************************************************************* */
+/* ********************************************************************************************* */
+
+
+/* ********************************************************************************************* */
+/* Util classes ******************************************************************************** */
+/* Only change the width and height in container and content */
+
+#container {
+	border: black solid 1px;
+	width: 298px;
+	height: 248px;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+#content {
+	position: absolute;
+	left: -1px;
+	top: -1px;
+	width: 300px;
+	height: 250px;
+}
+
+.hidden {
+	display: none;
+	opacity: 0;
+}
+
+.full {
+	width: 100%;
+	height: 100%;
+}
+
+.asset {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	background-repeat: no-repeat;
+	background-size: contain;
+	overflow: hidden;
+
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	
+	cursor: pointer;
+}
+
+.spritesheet {
+	background-size: cover;
+}
+/* ********************************************************************************************* */
+/* ********************************************************************************************* */
+
+
+/* ********************************************************************************************* */
+/* Copy **************************************************************************************** */
+@font-face {
+	font-family: "EENobblee-Regular";
+	src: url("https://s0.2mdn.net/creatives/assets/3639417/EENobblee-Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "EENobblee-Light";
+	src: url("https://s0.2mdn.net/creatives/assets/3639417/EENobblee-Light.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Rubrik-Regular";
+	src: url("https://s0.2mdn.net/creatives/assets/3639417/Rubrik-Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Rubrik-semiBold";
+	src: url("https://s0.2mdn.net/creatives/assets/3639417/Rubrik-Semibold.woff") format("woff");
+}
+
+.copyContainer {
+	display: inline-block;
+	position: absolute;
+	width: auto;
+	height: auto;
+
+	padding: 0px;
+	margin: 0px;
+
+	overflow: visible;
+}
+
+.copyContainer > *, .text {
+	width: auto;
+	height: auto;
+	line-height: 1.2;
+	opacity: 0;
+}
+
+.text {
+	position: absolute;
+}
+
+.nobblee			{ font-family: "EENobblee-Regular"; }
+.nobbleeLight		{ font-family: "EENobblee-Light"; }
+.rubrik				{ font-family: "Rubrik-Regular"; }
+.rubrikSemibold		{ font-family: "Rubrik-semiBold"; }
+.white				{ color: white; }
+.yellow 			{ color: #ffec00; }
+
+.particleGreen 	{ 
+	-webkit-filter: invert(55%) sepia(95%) saturate(943%) hue-rotate(134deg) brightness(84%) contrast(102%); 
+	filter: invert(55%) sepia(95%) saturate(943%) hue-rotate(134deg) brightness(84%) contrast(102%); 
+}
+.particleWhite	{ 
+	-webkit-filter: grayscale(100%) brightness(0%) invert(100%);
+	filter: grayscale(100%) brightness(0%) invert(100%);
+}
+.particleYellow	{ 
+	-webkit-filter: grayscale(0%) brightness(100%) invert(0%);
+	filter: grayscale(0%) brightness(100%) invert(0%);
+}
+
+
+/* ********************************************************************************************* */
+/* Particle text ******************************************************************************* */
+.img {
+	border: none;
+}
+
+.particle, .particle > * {
+	display: inline-block;
+	position: relative;
+}
+
+.p32, .p32 > * { 
+	height: 64px;
+	margin-bottom: -32px;
+	margin-right: -23px;
+}
+.ps30, .ps30 > * { 
+	height: 60px;
+	margin-bottom: -30px;
+	margin-right: -23px;
+}
+.ps28, .ps28 > * { 
+	height: 56px;
+	margin-bottom: -28px;
+	margin-right: -21px;
+}
+.ps26, .ps26 > * { 
+	height: 52px;
+	margin-bottom: -26px;
+	margin-right: -19px;
+}
+.ps24, .ps24 > * { 
+	height: 48px;
+	margin-bottom: -24px;
+	margin-right: -17px;
+}
+.ps22, .ps22 > * { 
+	height: 44px;
+	margin-bottom: -22px;
+	margin-right: -17px;
+}
+.ps20, .ps20 > * { 
+	height: 40px;
+	margin-bottom: -20px;
+	margin-right: -14px;
+}
+.ps18, .ps18 > * { 
+	height: 36px;
+	margin-bottom: -18px;
+	margin-right: -13px;
+}
+.ps16, .ps16 > * { 
+	height: 32px;
+	margin-bottom: -16px;
+	margin-right: -11px;
+}
+.ps14, .ps14 > * { 
+	height: 28px;
+	margin-bottom: -14px;
+	margin-right: -10px;
+}
+.ps12, .ps12 > * { 
+	height: 24px;
+	margin-bottom: -10px;
+	margin-right: -8px;
+}
+
+.pb32 { 
+	margin-left: -13px;
+	margin-bottom: 32px; 
+}
+.pb30 { 
+	margin-left: -12px;
+	margin-bottom: 30px; 
+}
+.pb28 { 
+	margin-left: -11px;
+	margin-bottom: 28px; 
+}
+.pb26 { 
+	margin-left: -10px;
+	margin-bottom: 26px; 
+}
+.pb24 {
+	margin-left: -9px;
+	margin-bottom: 24px; 
+}
+.pb22 {
+	margin-left: -8px;
+	margin-bottom: 22px; 
+}
+.pb20 {
+	margin-left: -7px;
+	margin-bottom: 20px; 
+}
+.pb18 {
+	margin-left: -6px;
+	margin-bottom: 18px; 
+}
+.pb16 {
+	margin-left: -6px;
+	margin-bottom: 16px; 
+}
+.pb14 {
+	margin-left: -6px;
+	margin-bottom: 16px; 
+}
+.pb12 {
+	margin-left: -6px;
+	margin-bottom: 16px; 
+}
+.character {
+	height: inherit;
+	width: auto;
+	overflow: hidden;
+	image-rendering: auto;
+	background-repeat: no-repeat;
+	background-size: auto;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+}
+
+
+/* ********************************************************************************************* */
+/* Headlines *********************************************************************************** */
+.h 		{ font-weight: 900; }
+.fs58 	{ font-size: 58px; }
+.fs57 	{ font-size: 57px; }
+.fs56 	{ font-size: 56px; }
+.fs55 	{ font-size: 55px; }
+.fs54 	{ font-size: 54px; }
+.fs53 	{ font-size: 53px; }
+.fs52 	{ font-size: 52px; }
+.fs51 	{ font-size: 51px; }
+.fs50 	{ font-size: 50px; }
+.fs49 	{ font-size: 49px; }
+.fs48 	{ font-size: 48px; }
+.fs47 	{ font-size: 47px; }
+.fs46 	{ font-size: 46px; }
+.fs45 	{ font-size: 45px; }
+.fs44 	{ font-size: 44px; }
+.fs43 	{ font-size: 43px; }
+.fs42 	{ font-size: 42px; }
+.fs41 	{ font-size: 41px; }
+.fs40 	{ font-size: 40px; }
+.fs39 	{ font-size: 39px; }
+.fs38 	{ font-size: 38px; }
+.fs37 	{ font-size: 37px; }
+.fs36 	{ font-size: 36px; }
+.fs35 	{ font-size: 35px; }
+.fs34 	{ font-size: 34px; }
+.fs33 	{ font-size: 33px; }
+.fs32 	{ font-size: 32px; }
+.fs31 	{ font-size: 31px; }
+.fs30 	{ font-size: 30px; }
+.fs29 	{ font-size: 29px; }
+.fs28 	{ font-size: 28px; }
+.fs27 	{ font-size: 27px; }
+.fs26 	{ font-size: 26px; }
+.fs25 	{ font-size: 25px; }
+.fs24 	{ font-size: 24px; }
+.fs23 	{ font-size: 23px; }
+.fs22 	{ font-size: 22px; }
+.fs21 	{ font-size: 21px; }
+.fs20 	{ font-size: 20px; }
+.fs19 	{ font-size: 19px; }
+.fs18 	{ font-size: 18px; }
+.fs16 	{ font-size: 16px; }
+.fs15 	{ font-size: 15px; }
+.fs14 	{ font-size: 14px; }
+.fs13 	{ font-size: 13px; }
+.fs12 	{ font-size: 12px; }
+.fs11 	{ font-size: 11px; }
+.fs10 	{ font-size: 10px; }
+.fs9 	{ font-size: 9px; }
+.fs8 	{ font-size: 8px; }
+.fs7 	{ font-size: 7px; }
+.fs6 	{ font-size: 6px; }
+.fs5 	{ font-size: 5px; }
+
+
+/* ********************************************************************************************* */
+/* Legals etc. ********************************************************************************* */
+.legals 				{ font-size: 8px; }
+.terms 					{ font-size: 8px; }
+.offerEnds 				{ font-size: 8px; }
+.priceChangeText 		{ font-size: 8px; }
+.networkPerforamnceText { font-size: 8px; }
+
+/* ********************************************************************************************* */
+/* ********************************************************************************************* */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ********************************************************************************************* */
+/* Editable CSS here *************************************************************************** */
+.copyContainer {
+	left: 13px;
+	top: 13px;
+	
+	/* Add background colour if needed to remove firefly background when copy's on show */
+	/* FYI - The 55 at the end of the hex code is alpha */
+	/* background: #028e8c55; */
+}
+
+/* A Safari specific fix where a single line's width might not be big enough and
+	drop a character onto a new line by mistake */
+.copyContainer > *, .text {
+	width: 287px;
+}
+
+.shadowed {
+	/* Only change the colour */
+	text-shadow: -4px -4px 5px rgba(2,142,140,1);
+	filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4,Color='#028e8c')";
+	filter: url(#drop-shadow);
+	-webkit-filter: drop-shadow(4px 4px 5px rgba(2,142,140,1));
+	filter: drop-shadow(4px 4px 5px rgba(2,142,140,1));
+}
+
+/* #frame1CopyContainer > * { */
+	/* Change line height for each copy frame in bulk here */
+	/* Copy, paste, repeat etc */
+	/* line-height: 1.2; */
+/* } */
+
+
+/* Constants *********************************************************************************** */
+/* Leave in, even if unused */
+
+#background { 
+	left: 0;
+	top: 0;
+}
+
+#termsText {
+	left: 13px;
+	bottom: 5px;
+}
+
+#legalsText {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	width: auto;
+	height: auto;
+	line-height: 1.2;
+	text-align: right;
+}
+
+#offerEndsText {
+	position: absolute;
+	left: 15px;
+	bottom: 10px;
+	width: auto;
+	height: auto;
+	line-height: 1.2;
+}
+
+#priceChangeText {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	font-size: 10px;
+	width: auto;
+	height: auto;
+	line-height: 1.2;
+	text-align: right;
+}
+
+#networkPerformanceText {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	width: auto;
+	height: auto;
+	line-height: 1.2;
+	text-align: right;
+}
+
+#logo {
+	left: 0;
+	top: 0;
+}
+
+#appleMusic {
+	left: 0;
+	top: 0;
+}
+
+#rootMetrics {
+	left: 0;
+	top: 0;
+}
+
+#ctaButton {
+	/* left: 127px;
+	top: 181px;
+	width: 90px;
+	height: 27px; */
+
+	top: 20px;
+}
+
+#cta {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 90px;
+	height: 27px;
+	
+	border-radius: 14px;
+	background: #ffec00;
+	color: #009c9c;
+	font-family: "Rubrik-Regular";
+	font-size: 13px;
+	line-height: 25px;
+	text-align: center;
+	-webkit-font-smoothing: subpixel-antialiased;
+
+	background-position: "left top";
+}
+/* ********************************************************************************************* */
+#intro {
+	left: 0px;
+	top: 0px;
+}
+
+#carsEnd {
+	top: 5px;
+	width: 300px;
+	height: 10750px;
+}
+
+#cars_endFrame {
+	top: 5px;
+	left: -1px;
+}
+/* ********************************************************************************************* */
+/* ********************************************************************************************* */
+
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+	/* IE Specific */
+}
